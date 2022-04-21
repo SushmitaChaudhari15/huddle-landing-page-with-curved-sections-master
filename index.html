@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Open+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Frontend Mentor | Huddle landing page with curved sections</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      margin: 0%;
+      padding: 0;
+      font-family: 'Open Sans';
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    .header {
+      padding: 4%;
+    }
+
+    .header img {
+      float: left;
+      width: 150px;
+    }
+
+    .header button {
+      float: right;
+      color: hsl(322, 100%, 66%);
+      border: 2px solid hsl(322, 100%, 66%);
+      border-radius: 22px;
+      padding: 4px 16px;
+      background-color: #FFFF;
+      cursor: pointer;
+    }
+
+    .header button:active {
+      color: hsl(321, 100%, 78%);
+      border: 2px solid hsl(321, 100%, 78%);
+    }
+
+    .inner {
+      text-align: center;
+    }
+
+    .inner .content {
+      text-align: center;
+      margin-top: 50px;
+
+    }
+
+    .inner .content h1 {
+      font-family: 'Open Sans';
+      font-weight: 700;
+    }
+
+    .inner .content p {
+      margin: 20px 35%;
+    }
+
+    .inner .content button {
+
+      color: #fff;
+      background-color: hsl(322, 100%, 66%);
+      border: 2px solid hsl(322, 100%, 66%);
+      border-radius: 30px;
+      padding: 12px 53px;
+      margin: 30px 0 60px 0;
+      box-shadow: 0 3px 3px 2px rgb(174 169 169);
+      cursor: pointer;
+    }
+
+    .inner .content button:active {
+      background-color: hsl(321, 100%, 78%);
+      border: 2px solid hsl(321, 100%, 78%);
+    }
+
+    .inner .screen-img img {
+      width: 60%;
+    }
+
+    .inner .counter ul li {
+      text-decoration: none;
+      list-style: none;
+      padding: 15px 0px 31px 0px;
+      width: 50%;
+      margin: 0 auto;
+    }
+    @media screen and (min-width:767px) {
+      .inner .counter ul li {
+      float: left;
+      }
+    }
+
+    .inner .counter ul li h2 {
+      font-size: 50px;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'Open Sans';
+    }
+
+    .inner .counter ul li img {
+      width: 5%;
+      margin: 0 100px 0 0px;
+    }
+
+    .inner .counter ul li p {
+      font-family: 'Open Sans';
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .grow-bg-top {
+      background-image: url(images/bg-section-top-desktop-1.svg);
+      /* background-position: top right, bottom left; */
+      background-repeat: no-repeat;
+      background-size: 100% 150px;
+      height: 150px;
+
+    }
+
+    .grow-bg-buttom {
+      background-image: url(images/bg-section-bottom-desktop-1.svg);
+      background-repeat: no-repeat;
+      background-size: 100% 150px;
+      height: 150px;
+
+    }
+
+    .grow-content {
+      display: flex;
+      align-items: center;
+      background-color: #f6fbff;
+    }
+
+    .grow-content .text-content,
+    .flowing-content .text-content,
+    .users-content .text-content {
+      margin: auto;
+      width: 50%;
+      display: block;
+      padding: 131px;
+    }
+
+    .grow-content .img-content img,
+    .flowing-content .img-content img,
+    .users-content .img-content img {
+      width: 70%;
+    }
+    
+    .grow-content .img-content ,
+    .flowing-content .img-content ,
+    .users-content .img-content  {
+      text-align:center;
+    }
+
+    .grow-content .text-content h3,
+    .flowing-content .text-content h3,
+    .users-content .text-content h3 {
+      font-size: 26px;
+    }
+
+    .grow-content .text-content p,
+    .flowing-content .text-content p,
+    .users-content .text-content p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .flowing-content {
+      display: flex;
+      align-items: center;
+      margin: 50px 0;
+    }
+
+    .user-bg-top {
+      background-image: url(images/bg-section-top-desktop-2.svg);
+      /* background-position: top right, bottom left; */
+      background-repeat: no-repeat;
+      background-size: 100% 150px;
+      height: 150px;
+
+    }
+
+    .user-bg-buttom {
+      background-image: url(images/bg-section-bottom-desktop-2.svg);
+      background-repeat: no-repeat;
+      background-size: 100% 150px;
+      height: 150px;
+
+    }
+
+    .users-content {
+      display: flex;
+      align-items: center;
+      background-color: #f6fbff;
+    }
+
+    .end-content {
+      text-align: center;
+      padding: 10%;
+    }
+
+    .end-content h3 {
+      font-family: 'Open Sans';
+      font-weight: bold;
+    }
+
+
+    .end-content button {
+
+      color: #fff;
+      background-color: hsl(322, 100%, 66%);
+      border: 2px solid hsl(322, 100%, 66%);
+      border-radius: 30px;
+      padding: 12px 53px;
+      box-shadow: 0 3px 3px 2px rgb(174 169 169);
+      cursor: pointer;
+    }
+
+    .end-content button:active {
+      background-color: hsl(321, 100%, 78%);
+      border: 2px solid hsl(321, 100%, 78%);
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .footer-bg-top {
+      background-image: url("images/bg-footer-top-desktop.svg");
+      background-repeat: no-repeat;
+      background-size: 100% 150px;
+      height: 150px;
+
+    }
+
+    .footer-content {
+
+      background-color: #00252e;
+      display: flex;
+      color: #fff;
+      padding-top: 3%;
+    }
+
+    .footer-content .left-content {
+      margin-left: 8%;
+    }
+
+    .footer-content .left-content h4 {
+      font-size: 30px;
+      color: #fff;
+      margin-bottom: 0;
+    }
+
+    .footer-content .left-content h4 i {
+
+      margin: 0px 8px 0 0;
+    }
+
+    .footer-content .left-content p {
+      margin: 10px 43% 0 0%;
+    }
+
+    .footer-content .left-content ul {
+      padding: 0;
+    }
+
+    .footer-content .left-content li {
+      display: flex;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .footer-content .right-content h3 {
+      text-transform: uppercase;
+      font-size: 25px;
+      margin-top: 6%;
+    }
+
+    .footer-content .right-content p {
+      margin: 8px 48% 20px 0%;
+    }
+
+    .footer-content .right-content .subscribe input {
+      width: 50%;
+      height: 33px;
+      border-radius: 10px;
+      margin: 10px 20px 0 0;
+    }
+
+    .footer-content .right-content .subscribe button {
+
+      color: #fff;
+      background-color: hsl(322, 100%, 66%);
+      border: 2px solid hsl(322, 100%, 66%);
+      border-radius: 6px;
+      padding: 9px 32px;
+      cursor: pointer;
+
+    }
+
+    .footer-content .right-content .subscribe button:active {
+      background-color: hsl(321, 100%, 78%);
+      border: 2px solid hsl(321, 100%, 78%);
+    }
+
+
+    .footer-content .left-content .social {
+      margin: 7% 0 15% 0;
+    }
+
+    .footer-content .left-content .social ul {
+      display: flex;
+      height: 30px;
+      width: 100%;
+    }
+
+    .footer-content .left-content .social ul li {
+      margin: 0px 10px 0 0;
+      font-size: 22px;
+    }
+
+    .footer-content .left-content ul li span {
+      margin: 18px 15px 0 0;
+    }
+
+    .footer-content .left-content .social ul li svg {
+      background-color: #fff;
+      border: 1px solid #FFF;
+      padding: 2px 5px 0;
+    }
+
+    @media screen and (max-width:768px) {
+      .inner .content p {
+        margin: 20px 5px;
+      }
+
+
+      .grow-bg-top {
+        background-image: url(images/bg-section-top-mobile-1.svg);
+        /* background-position: top right, bottom left; */
+        background-repeat: no-repeat;
+        background-size: 100% 150px;
+        height: 150px;
+
+      }
+
+      .grow-bg-buttom {
+        background-image: url(images/bg-section-bottom-mobile-1.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 150px;
+        height: 150px;
+
+      }
+
+      .user-bg-top {
+        background-image: url(images/bg-section-top-mobile-2.svg);
+        /* background-position: top right, bottom left; */
+        background-repeat: no-repeat;
+        background-size: 100% 150px;
+        height: 150px;
+
+      }
+
+      .user-bg-buttom {
+        background-image: url(images/bg-section-bottom-mobile-2.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 150px;
+        height: 150px;
+
+      }
+
+      .footer-bg-top {
+        background-image: url("images/bg-footer-top-mobile.svg");
+        background-repeat: no-repeat;
+        height: 73px;
+
+      }
+
+
+      .grow-content,
+      .users-content {
+        flex-wrap: wrap-reverse;
+        text-align: center;
+      }
+
+      .flowing-content {
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .grow-content .text-content,
+      .flowing-content .text-content,
+      .users-content .text-content {
+        padding: 0;
+        margin-top: 40px;
+      }
+
+      .flowing-content .text-content h3 {
+        font-size: 18px;
+      }
+
+      .end-content h3 {
+        font-size: 30px;
+      }
+
+      .footer-content {
+        padding: 3% 35px 0 35px;
+        flex-wrap: wrap-reverse;
+      }
+
+      .footer-content .right-content p {
+        margin: 0;
+      }
+
+      .footer-content .right-content .subscribe input {
+        width: 100%;
+      }
+
+      .footer-content .right-content .subscribe button {
+        margin: 15px 0;
+        float: right;
+      }
+
+      .footer-content .left-content {
+        margin-left: 0;
+      }
+
+      .footer-content .left-content p {
+        margin: 0
+      }
+
+      .end-content {
+        padding: 10% 0 50%;
+      }
+      .inner .counter ul li img {
+    width: 25%;
+      }
+    }
+    @media screen and (min-width:416px) and (max-width: 768px){
+.footer-bg-top {
+    background-size: 750px 74px;
+}
+
+}
+@media screen and (max-width:415px) {
+  .footer-bg-top {
+  background-size: 410px 74px;
+}
+}
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="header">
+      <img src="images/logo.svg" alt="">
+      <button>Try it Free</button>
+    </div>
+    <div class="inner clearfix">
+      <div class="content ">
+        <h1> Build The Community Your Fans Will Love</h1>
+        <p>
+          Huddle re-imagines the way we build communities. You have a voice, but so does
+          your audience. Create connections with your users as you engage in genuine discussion.
+        </p>
+        <button>Get Started For Free</button>
+      </div>
+
+      <div class="screen-img">
+        <img src="images/screen-mockups.svg" alt="">
+      </div>
+
+      <div class="counter clearfix">
+        <ul>
+          <li>
+            <img src="images/icon-communities.svg" alt="">
+            <h2>1.4k+</h2>
+            <p>Community Formed</p>
+          </li>
+          <li>
+            <img src="images/icon-messages.svg" alt="">
+            <h2>2.7m+</h2>
+            <p>Messages Sent</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grow-bg-top"></div>
+    <div class="grow-content clearfix">
+      <div class="text-content">
+        <h3>Grow Together </h3>
+        <p>Generate meaningful discussions with your audience and build a strong, loyal community.
+          Think of the insightful conversations you miss out on with a feedback form.
+        </p>
+      </div>
+      <div class="img-content">
+        <img src="images/illustration-grow-together.svg" alt="">
+      </div>
+    </div>
+    <div class="grow-bg-buttom"></div>
+
+    <div class="flowing-content">
+      <div class="img-content">
+        <img src="images/illustration-flowing-conversation.svg" alt="">
+      </div>
+      <div class="text-content">
+        <h3>Flowing Conversations</h3>
+        <p>You wouldn't paginate a conversation in real life, so why do it online? Our threads have
+          just-in-time loading for a more natural flow.
+        </p>
+      </div>
+    </div>
+
+    <div class="user-bg-top"></div>
+    <div class="users-content">
+      <div class="text-content">
+        <h3>Your Users</h3>
+        <p>It takes no time at all to integrate Huddle with your app's authentication solution. This means,
+          once signed in to your app, your users can start chatting immediately.
+        </p>
+      </div>
+      <div class="img-content">
+        <img src="images/illustration-your-users.svg" alt="">
+      </div>
+    </div>
+    <div class="user-bg-buttom"></div>
+
+    <div class="end-content">
+      <h3>Ready To Build Your Community? </h3>
+      <button>Get Started For Free</button>
+    </div>
+
+  </main>
+
+  <footer>
+
+    <div class="footer-bg-top"></div>
+    <div class="footer-content">
+      <div class="left-content">
+
+        <h4><i class="fa fa-commenting-o fa-inverse"></i>Huddle</h4>
+        <p class="footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam, hendrerit
+          lacinia
+          vestibulum a, ultrices quis sem.</p>
+        <ul>
+          <li>
+            <span><img src="images/icon-phone.svg" alt=""></span>
+            <p>Phone: +1-543-123-4567 </p>
+          </li>
+          <li>
+            <span><i class="fa fa-envelope-o fa-inverse"></i> </span>
+            <p>example@huddle.com</p>
+          </li>
+        </ul>
+
+        <div class="social">
+          <ul>
+            <li><i class="fa fa-facebook fa-inverse"></i></li>
+            <li><i class="fa fa-instagram fa-inverse"></i></li>
+            <li><i class="fa fa-twitter fa-inverse"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-content">
+        <h3>Newsletter</h3>
+        <p>To recieve tips on how to grow your community, sign up to our weekly newsletter. We’ll never
+          send you spam or pass on your email address</p>
+        <div class="subscribe">
+          <input type="text">
+          <button>Subscribe</button>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+
+  </footer>
+</body>
+
+</html>
