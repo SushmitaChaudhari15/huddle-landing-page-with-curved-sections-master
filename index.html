@@ -58,7 +58,7 @@
 
     .inner .content {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 100px;
 
     }
 
@@ -78,7 +78,7 @@
       border: 2px solid hsl(322, 100%, 66%);
       border-radius: 30px;
       padding: 12px 53px;
-      margin: 30px 0 60px 0;
+      margin: 30px 0 100px 0;
       box-shadow: 0 3px 3px 2px rgb(174 169 169);
       cursor: pointer;
     }
@@ -95,21 +95,23 @@
     .inner .counter ul li {
       text-decoration: none;
       list-style: none;
-      padding: 15px 0px 31px 0px;
+      padding: 30px 0px 40px 0px;
       width: 50%;
       margin: 0 auto;
     }
+
     @media screen and (min-width:767px) {
       .inner .counter ul li {
-      float: left;
+        float: left;
       }
     }
 
-    .inner .counter ul li h2 {
+    .inner .counter ul li .counter-no {
       font-size: 50px;
-      font-weight: 600;
+      font-weight: bold;
       margin: 0;
       font-family: 'Open Sans';
+      color: black;
     }
 
     .inner .counter ul li img {
@@ -160,11 +162,11 @@
     .users-content .img-content img {
       width: 70%;
     }
-    
-    .grow-content .img-content ,
-    .flowing-content .img-content ,
-    .users-content .img-content  {
-      text-align:center;
+
+    .grow-content .img-content,
+    .flowing-content .img-content,
+    .users-content .img-content {
+      text-align: center;
     }
 
     .grow-content .text-content h3,
@@ -183,7 +185,7 @@
     .flowing-content {
       display: flex;
       align-items: center;
-      margin: 50px 0;
+      margin: 100px 0;
     }
 
     .user-bg-top {
@@ -214,9 +216,10 @@
       padding: 10%;
     }
 
-    .end-content h3 {
+    .end-content p {
       font-family: 'Open Sans';
       font-weight: bold;
+      font-size: 30px;
     }
 
 
@@ -268,7 +271,7 @@
     .footer-content .left-content h4 {
       font-size: 30px;
       color: #fff;
-      margin-bottom: 0;
+      margin-bottom: 20px;
     }
 
     .footer-content .left-content h4 i {
@@ -277,7 +280,7 @@
     }
 
     .footer-content .left-content p {
-      margin: 10px 43% 0 0%;
+      margin: 0 43% 0 0%;
     }
 
     .footer-content .left-content ul {
@@ -340,7 +343,7 @@
     }
 
     .footer-content .left-content ul li span {
-      margin: 18px 15px 0 0;
+      margin: 0 15px 0 0;
     }
 
     .footer-content .left-content .social ul li svg {
@@ -351,7 +354,7 @@
 
     @media screen and (max-width:768px) {
       .inner .content p {
-        margin: 20px 5px;
+        margin: 20px 10px;
       }
 
 
@@ -413,6 +416,7 @@
       .users-content .text-content {
         padding: 0;
         margin-top: 40px;
+        width: 83%;
       }
 
       .flowing-content .text-content h3 {
@@ -452,22 +456,29 @@
       .end-content {
         padding: 10% 0 50%;
       }
+
       .inner .counter ul li img {
-    width: 25%;
+        width: 20%;
+      }
+
+      .inner .content h1 {
+        font-size: 25px;
+        margin: 32px 40px;
       }
     }
-    @media screen and (min-width:416px) and (max-width: 768px){
-.footer-bg-top {
-    background-size: 750px 74px;
-}
 
-}
-@media screen and (max-width:415px) {
-  .footer-bg-top {
-  background-size: 410px 74px;
-}
-}
+    @media screen and (min-width:416px) and (max-width: 768px) {
+      .footer-bg-top {
+        background-size: 750px 74px;
+      }
 
+    }
+
+    @media screen and (max-width:415px) {
+      .footer-bg-top {
+        background-size: 410px 74px;
+      }
+    }
   </style>
 </head>
 
@@ -495,12 +506,12 @@
         <ul>
           <li>
             <img src="images/icon-communities.svg" alt="">
-            <h2>1.4k+</h2>
+            <p class="counter-no">1.4k+</p>
             <p>Community Formed</p>
           </li>
           <li>
             <img src="images/icon-messages.svg" alt="">
-            <h2>2.7m+</h2>
+            <p class="counter-no">2.7m+</p>
             <p>Messages Sent</p>
           </li>
         </ul>
@@ -548,7 +559,7 @@
     <div class="user-bg-buttom"></div>
 
     <div class="end-content">
-      <h3>Ready To Build Your Community? </h3>
+      <p>Ready To Build Your Community? </p>
       <button>Get Started For Free</button>
     </div>
 
